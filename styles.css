@@ -1,0 +1,36 @@
+/* Style Sheet for QC DB Program Main Page */
+
+
+/* Header Styles */
+.topOfPage {
+  border: 1px solid black;
+  text-align: center;
+}
+.topOfPage:hover {
+  background: red;
+}
+
+
+/* Table Styles */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* Form Styles */
+
+.gradation-form {
+  margin: 3%;
+  width: 25vw;
+}
