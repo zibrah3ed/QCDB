@@ -56,10 +56,10 @@
   <div class="container">
     <div class="gradation-form form-group">
       <form action="table.php">
-        Test Date:<br>
-        <input type="date" name="testDate" class="form-control"><br>
-        Job Number:<br>
-        <input type="text" name="jobNum" class="form-control"><br>
+        <label for="date-input">Date:</label>
+        <input type="date" name="testDate" id="date-input" class="form-control input-sm"><br>
+        <label for="job-input">Job Number:</label>
+        <input type="text" name="jobNum" id="job-input" class="form-control input-sm"><br>
         <input type="submit" value="Search" class="btn btn-success">
       </form>
     </div>
@@ -67,6 +67,21 @@
 
 
   <!-- PHP Scripts -->
+  <!-- PHP test of function <?php print(Date("l F d, Y")); ?> -->
+  <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "pittsburg";
+
+      // Create connection
+      $conn = new mysqli($servername, $username, $password);
+
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
+  ?>
   <!-- End PHP -->
 
   <!-- Table to Display Test Results -->
