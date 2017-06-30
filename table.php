@@ -69,44 +69,82 @@
       }
       echo "Connected successfully";
 
+        // Get variable from form submit
+        $jobNum = $_GET["jobNum"];
 
-        $sql = "SELECT * FROM 'gradations'";
+        $sql = "SELECT Jobs_job_id, aggPercent, Aggregate_agg_id, sieve2inch, sieve15inch,
+                sieve1inch, sieve34inch, sieveNo4, sieve12inch, sieve38inch,
+                sieveNo8, sieveNo16, sieveNo30, sieveNo50,sieveNo100,sieveNo200
+                FROM gradations where sieveNo4 > 50";
 
         $result = $conn->query($sql);
-
-
 
         echo "<div class='result-table container'>";
         echo "<div class='table-responsive'>";
         echo "<table class='table-test table'>"; //begin table tag...
 
-        // if ($result->num_rows > 0) {
-        // //you can add thead tag here if you want your table to have column headers
-        //   while($rowitem = mysqli_fetch_array($result)) {
-        //     echo "<tr>";
-        //     echo "<td>" . $rowitem['sieve34inch'] . "</td>";
-        //     echo "<td>" . $rowitem['sieve12inch'] . "</td>";
-        //     echo "<td>" . $rowitem['sieve38inch'] . "</td>";
-        //     echo "<td>" . $rowitem['sieveNo4'] . "</td>";
-        //     echo "</tr>";
-        //   }
-        //     } else {
-        //   echo "0 results";
-        // }
-        // echo "</table>";
-        // echo "</div></div>"; //end table tag
-
-        $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                echo "3/4: " . $row["sieve34inch"]. " - 1/2: " . $row["sieve12inch"]. " - No. 4: " . $row["sieveNo4"]. "<br>";
-            }
-        } else {
-            echo "0 results";
+          echo "<tr>
+            <th>
+            Job
+            </th>
+            <th>
+            Agg Name
+            </th>
+            <th>
+            Agg Percent
+            </th>
+            <th>2.0</th><th>1.5</th>
+            <th>1.0</th>
+            <th>3/4</th>
+            <th>1/2</th>
+            <th>3/8</th>
+            <th>No.4</th>
+            <th>No.8</th>
+            <th>No.16</th>
+            <th>No.30</th>
+            <th>No.50</th>
+            <th>No.100</th>
+            <th>No.200</th>
+          </tr>";
+        //you can add thead tag here if you want your table to have column headers
+          while($rowitem = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $rowitem['Jobs_job_id'] . "</td>";
+            echo "<td>" . $rowitem['Aggregate_agg_id'] . "</td>";
+            echo "<td>" . $rowitem['aggPercent'] . "</td>";
+            echo "<td>" . $rowitem['sieve2inch'] . "</td>";
+            echo "<td>" . $rowitem['sieve15inch'] . "</td>";
+            echo "<td>" . $rowitem['sieve1inch'] . "</td>";
+            echo "<td>" . $rowitem['sieve34inch'] . "</td>";
+            echo "<td>" . $rowitem['sieve12inch'] . "</td>";
+            echo "<td>" . $rowitem['sieve38inch'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo4'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo8'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo16'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo30'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo50'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo100'] . "</td>";
+            echo "<td>" . $rowitem['sieveNo200'] . "</td>";
+            echo "</tr>";
+          }
+            } else {
+          echo "0 results";
         }
-        $conn->close();
+        echo "</table>";
+        echo "</div></div>"; //end table tag
+
+        // $result = $conn->query($sql);
+        //
+        // if ($result->num_rows > 0) {
+        //     // output data of each row
+        //     while($row = $result->fetch_assoc()) {
+        //         echo "3/4: " . $row["sieve34inch"]. " - 1/2: " . $row["sieve12inch"]. " - No. 4: " . $row["sieveNo4"]. "<br>";
+        //     }
+        // } else {
+        //     echo "0 results";
+        // }
+        // $conn->close();
         ?>
   <!-- End PHP -->
   </body>
