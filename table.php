@@ -107,8 +107,8 @@
         //you can add thead tag here if you want your table to have column headers
           while($rowitem = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo "<td>" . $jobNum . "</td>"; // Change later to match returned data
-            echo "<td>" . htmlspecialchars($rowitem['aggregate.aggLocalName']) . "</td>";
+            echo "<td>" . htmlspecialchars($rowitem['KossProjNum']) . "</td>";
+            echo "<td>" . htmlspecialchars($rowitem['aggLocalName']) . "</td>";
             echo "<td>" . $rowitem['aggPercent'] . "</td>";
             echo "<td>" . $rowitem['sieve2inch'] . "</td>";
             echo "<td>" . $rowitem['sieve15inch'] . "</td>";
