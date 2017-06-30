@@ -139,5 +139,9 @@
         // $conn->close();
         ?>
   <!-- End PHP -->
+    <div class="container">
+      <footer>
+        <p>© 2016 Tyson Funk</p>
+    </footer>
   </body>
 </html>
