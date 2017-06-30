@@ -55,17 +55,9 @@
 
   <!-- PHP Scripts -->
   <?php
-      $servername = "localhost";//localh.dev @ Home
-      $username = "root";
-      $password = "pittsburg";
-      $dbName = "QCDB";
-      // Create connection
-      $conn = new mysqli($servername, $username, $password, $dbName);
-      // Check connection
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }
-      //echo "Connected successfully";
+        include 'config.php';
+        include 'opendb.php';
+
         // Get variable from form submit
         $jobNum = $_GET["jobNum"];
         $sql = "SELECT Jobs_job_id, aggPercent, Aggregate_agg_id, sieve2inch, sieve15inch, sieve1inch,
@@ -89,6 +81,9 @@
             Agg Name
             </th>
             <th>
+            Producer
+            </th>
+            <th>
             Agg Percent
             </th>
             <th>2.0</th><th>1.5</th>
@@ -109,6 +104,7 @@
             echo "<tr>";
             echo "<td>" . htmlspecialchars($rowitem['KossProjNum']) . "</td>";
             echo "<td>" . htmlspecialchars($rowitem['aggLocalName']) . "</td>";
+            echo "<td>" . htmlspecialchars($rowitem['aggProducer']) . "</td>";
             echo "<td>" . $rowitem['aggPercent'] . "</td>";
             echo "<td>" . $rowitem['sieve2inch'] . "</td>";
             echo "<td>" . $rowitem['sieve15inch'] . "</td>";
@@ -126,26 +122,35 @@
             echo "</tr>";
           }
             } else {
-          echo "0 results";
+          echo "<b>No results - Check Job Number Formatting.</b>";
         }
         echo "</table>";
         echo "</div></div>"; //end table tag
-        // $result = $conn->query($sql);
-        //
-        // if ($result->num_rows > 0) {
-        //     // output data of each row
-        //     while($row = $result->fetch_assoc()) {
-        //         echo "3/4: " . $row["sieve34inch"]. " - 1/2: " . $row["sieve12inch"]. " - No. 4: " . $row["sieveNo4"]. "<br>";
-        //     }
-        // } else {
-        //     echo "0 results";
-        // }
-        // $conn->close();
         ?>
   <!-- End PHP -->
-    <div class="container">
-      <footer>
-        <p>© 2016 Tyson Funk</p>
-    </footer>
+  <div class="container">
+    <div class="result-table-two">
+      <div class="row">
+        <div class="col-md-6">
+          Agg One
+          </br>
+          <?php
+        </div>
+        <div class="col-md-6">Agg Two</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">Agg Three</div>
+        <div class="col-md-6">Agg Four</div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer navbar-fixed-bottom myFooter">
+      <p class="text-muted">-- © 2017 Tyson Funk -- </p>
+  </footer>
+  <!-- Load JS at end of page -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
