@@ -55,17 +55,9 @@
 
 <!-- PHP Scripts -->
 <?php
-    $servername = "localhost";//localh.dev @ Home
-    $username = "root";
-    $password = "pittsburg";
-    $dbName = "QCDB";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbName);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    //echo "Connected successfully";
+    include 'config.php';
+    include 'opendb.php';
+
       // Get variable from form submit
       $jobNum = $_GET["jobNum"];
       $sql = "SELECT Jobs_job_id, aggPercent, Aggregate_agg_id, sieve2inch, sieve15inch, sieve1inch,
@@ -82,23 +74,24 @@
       echo "<table class='table-test table'>"; //begin table tag...
       if ($result->num_rows > 0) {
         echo "<tr>
-          <tr>Job</th>
-          <th>Agg Name</th>
-          <th>Producer</th>
-          <th>Agg Percent</th
-          <th>2.0</th><th>1.5</th>
-          <th>1.0</th>
-          <th>3/4</th>
-          <th>1/2</th>
-          <th>3/8</th>
-          <th>No.4</th>
-          <th>No.8</th>
-          <th>No.16</th>
-          <th>No.30</th>
-          <th>No.50</th>
-          <th>No.100</th>
-          <th>No.200</th>
-        </tr>";
+                <th>Job</th>
+                <th>Agg Name</th>
+                <th>Producer</th>
+                <th>Agg Percent</th>
+                <th>2.0</th>
+                <th>1.5</th>
+                <th>1.0</th>
+                <th>3/4</th>
+                <th>1/2</th>
+                <th>3/8</th>
+                <th>No.4</th>
+                <th>No.8</th>
+                <th>No.16</th>
+                <th>No.30</th>
+                <th>No.50</th>
+                <th>No.100</th>
+                <th>No.200</th>
+              </tr>";
       //you can add thead tag here if you want your table to have column headers
         while($rowitem = mysqli_fetch_array($result)) {
           echo "<tr>";
@@ -127,31 +120,127 @@
       echo "</table>";
       echo "</div></div>"; //end table tag
 
-      // Close Connection
-      $conn->close();
+      // Close Connection later in page
+
       ?>
 <!-- End PHP -->
+
+
   <div class="container">
     <div class="result-table-two">
       <div class="row">
         <div class="col-md-6">
-          Agg One
-          </br>
           <?php
+
+          $jobNum = $_GET["jobNum"];
+          $sql = "SELECT Jobs_job_id, aggPercent, Aggregate_agg_id, sieve2inch, sieve15inch, sieve1inch,
+                    sieve34inch, sieveNo4, sieve12inch, sieve38inch, sieveNo8, sieveNo16, sieveNo30,
+                    sieveNo50,sieveNo100,sieveNo200, Jobs.KossProjNum, aggregate.aggLocalName,
+                    aggregate.aggProducer,aggregate.aggType
+                    FROM Jobs
+                    INNER JOIN gradations ON Jobs.job_id = gradations.Jobs_job_id
+                    INNER JOIN aggregate ON gradations.aggregate_agg_id = aggregate.agg_id
+                    where Jobs.kossProjNum = '$jobNum' AND aggregate.aggType = 'Coarse'";
+          $result = $conn->query($sql);
+          // Title bar at top of table
+            $titleItem = mysqli_fetch_array($result);
+            echo "<p>Koss # : " . htmlspecialchars($titleItem['KossProjNum']) . "</p>";
+            echo "<p>Agg Name : " . htmlspecialchars($titleItem['aggLocalName']) . "</p>";
+            echo "<p>Producer : " . htmlspecialchars($titleItem['aggProducer']) . "</p>";
+            echo "<p>Agg Type : " . htmlspecialchars($titleItem['aggType']) . "</p>";
+            echo "<p>JMF% : " . $titleItem['aggPercent'] . "</p>";
+          // End Titlebar
+          // Table Container
+            echo "<div class='result-table container'>";
+            echo "<div class='table-responsive'>";
+            echo "<table class='table-test table'>"; //begin table tag...
+            echo "<tr>
+                    <th>Sieve</th>
+                    <th>% Retained</th>
+                  </tr>";
+          if ($result->num_rows > 0) {
+          //you can add thead tag here if you want your table to have column headers
+            while($rowitem = mysqli_fetch_array($result)) {
+              echo "<tr>";
+              echo "<td>2.0</td>";
+              echo "<td>" . $rowitem['sieve2inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1.5</td>";
+              echo "<td>" . $rowitem['sieve15inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1.0</td>";
+              echo "<td>" . $rowitem['sieve1inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>3/4</td>";
+              echo "<td>" . $rowitem['sieve34inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1/2</td>";
+              echo "<td>" . $rowitem['sieve12inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>3/8</td>";
+              echo "<td>" . $rowitem['sieve38inch'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.4</td>";
+              echo "<td>" . $rowitem['sieveNo4'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.8</td>";
+              echo "<td>" . $rowitem['sieveNo8'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.16</td>";
+              echo "<td>" . $rowitem['sieveNo16'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.30</td>";
+              echo "<td>" . $rowitem['sieveNo30'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.50</td>";
+              echo "<td>" . $rowitem['sieveNo50'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.100</td>";
+              echo "<td>" . $rowitem['sieveNo100'] . "</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.200</td>";
+              echo "<td>" . $rowitem['sieveNo200'] . "</td>";
+              echo "</tr>";
+            }
+              } else {
+            echo "0 results";
+          }
+          echo "</table>";
+          echo "</div></div>";
+          ?>
         </div>
         <div class="col-md-6">Agg Two</div>
       </div>
       <div class="row">
         <div class="col-md-6">Agg Three</div>
-        <div class="col-md-6">Agg Four</div>
+        <div class="col-md-6">Agg Four
+          <?php
+            $conn->close();
+          ?>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
   <footer class="footer navbar-fixed-bottom myFooter">
       <p class="text-muted">-- © 2017 Tyson Funk -- </p>
   </footer>
+
   <!-- Load JS at end of page -->
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
