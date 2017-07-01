@@ -2,12 +2,18 @@
 
 
 /* Header Styles */
+.lobster-text {
+  font-family: 'Lobster', cursive;
+  text-shadow: 4px 4px 4px #aaa;
+}
 
+/*font-family: 'Lobster', cursive;
+font-family: 'Josefin Slab', serif;*/
 
 /* Table Styles */
 table {
   border-collapse: collapse;
-  font-family: arial, sans-serif;
+  font-family: 'Josefin Slab', serif;
   width: 100%;
 }
 
@@ -25,6 +31,9 @@ td, th {
 }
 .table-top {
   background: lightgrey;
+  font-family: 'Josefin Slab', serif;
+  margin-bottom: 0.25em;
+  padding: 0.25em 0.5em 0.25em 0.5em;
 }
 
 /* Form Styles */
@@ -42,3 +51,36 @@ td, th {
     text-align: center;
     width: 100%;
   }
+
+/* Shadow s*/
+  body {
+    font-family: 'Josefin Slab', serif;
+    margin-top:20px;
+  }
+
+.box-shadow-demo {
+    background-color: #009688;
+    height: 100px;
+    width: 100px;
+    margin: 20px auto;
+}
+.z-depth-1 {
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+.z-depth-2 {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+}
+.z-depth-3 {
+    -webkit-box-shadow: 0 11px 7px 0 rgba(0,0,0,0.19),0 13px 25px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 11px 7px 0 rgba(0,0,0,0.19),0 13px 25px 0 rgba(0,0,0,0.3);
+}
+.z-depth-4 {
+    -webkit-box-shadow: 0 14px 12px 0 rgba(0,0,0,0.17),0 20px 40px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 14px 12px 0 rgba(0,0,0,0.17),0 20px 40px 0 rgba(0,0,0,0.3);
+}
+.z-depth-5 {
+    -webkit-box-shadow: 0 17px 17px 0 rgba(0,0,0,0.15),0 27px 55px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 17px 17px 0 rgba(0,0,0,0.15),0 27px 55px 0 rgba(0,0,0,0.3);
+}

@@ -17,11 +17,13 @@ function makeTable($agg_Type){
   if ($result->num_rows > 0) {
     // Title bar at top of table
       $rowitem = mysqli_fetch_array($result);
+      echo "<div class='table-top z-depth-1'";
       echo "<p>Koss # : " . htmlspecialchars($rowitem['KossProjNum']) . "</p>";
       echo "<p>Agg Name : " . htmlspecialchars($rowitem['aggLocalName']) . "</p>";
       echo "<p>Producer : " . htmlspecialchars($rowitem['aggProducer']) . "</p>";
       echo "<p>Agg Type : " . htmlspecialchars($rowitem['aggType']) . "</p>";
       echo "<p>JMF% : " . $rowitem['aggPercent'] . "</p>";
+      echo "</div>";
     // End Titlebar
     // Table Container
       echo "<div class='result-table'>";
@@ -87,7 +89,7 @@ function makeTable($agg_Type){
       echo "</tr>";
     }
       } else {
-        echo "<div class='table-top'";
+        echo "<div class='table-top z-depth-1'";
         echo "<p>Koss # : -- </p>";
         echo "<p>Agg Name : -- </p>";
         echo "<p>Producer : -- </p>";
