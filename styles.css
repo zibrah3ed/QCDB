@@ -20,9 +20,10 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-.portfolio-item {
+.bottom-margin {
     margin-bottom: 30px;
 }
+
 
 /* Form Styles */
 

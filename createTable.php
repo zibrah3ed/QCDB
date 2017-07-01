@@ -93,4 +93,5 @@ function makeTable($agg_Type){
   echo "</div></div>";
 
 }
+$conn->close();
 ?>
