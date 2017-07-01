@@ -87,7 +87,75 @@ function makeTable($agg_Type){
       echo "</tr>";
     }
       } else {
-    echo "0 results";
+        echo "<div class='table-top'";
+        echo "<p>Koss # : -- </p>";
+        echo "<p>Agg Name : -- </p>";
+        echo "<p>Producer : -- </p>";
+        echo "<p>Agg Type : -- </p>";
+        echo "<p>JMF% : -- </p>";
+        echo "</div>";
+      // End Titlebar
+      // Table Container
+        echo "<div class='result-table'>";
+        echo "<div class='table-responsive'>";
+        echo "<table class='table-test table'>"; //begin table tag...
+        echo "<tr>
+                <th class='col-xs-3'>Sieve</th>
+                <th class='col-xs-3'>% Retained</th>
+              </tr>";
+              echo "<tr>";
+              echo "<td>2.0</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1.5</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1.0</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>3/4</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>1/2</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>3/8</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.4</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.8</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.16</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.30</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.50</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.100</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>No.200</td>";
+              echo "<td> -- </td>";
+              echo "</tr>";
+
   }
   echo "</table>";
   echo "</div></div>";
