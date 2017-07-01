@@ -15,7 +15,6 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <!-- Optional theme -->
       <link rel="stylesheet" href="css/bootstrap-theme.min.css" rel="stylesheet">
-  </script>
 
 </head>
 <body>
@@ -28,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">QC Database</a>
+        <a class="navbar-brand" href="index.html">QC Database</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right">
