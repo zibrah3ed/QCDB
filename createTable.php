@@ -24,7 +24,7 @@ function makeTable($agg_Type){
       echo "<p>JMF% : " . $rowitem['aggPercent'] . "</p>";
     // End Titlebar
     // Table Container
-      echo "<div class='result-table container'>";
+      echo "<div class='result-table'>";
       echo "<div class='table-responsive'>";
       echo "<table class='table-test table'>"; //begin table tag...
       echo "<tr>

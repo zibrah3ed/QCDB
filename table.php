@@ -128,7 +128,6 @@
 
 
   <div class="container">
-    <div class="result-table-two">
       <div class="row">
         <div class="col-md-3">
           <?php
@@ -142,11 +141,9 @@
             makeTable($type);
           ?>
         </div>
-      </div>
-      <div class="row">
         <div class="col-md-3">
           <?php
-          $type = "Fine";
+          $type = "Int2";
           makeTable($type);
           ?>
         </div>
@@ -159,7 +156,6 @@
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Footer -->
   <footer class="footer navbar-fixed-bottom myFooter">

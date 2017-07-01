@@ -2,13 +2,6 @@
 
 
 /* Header Styles */
-.topOfPage {
-  border: 1px solid black;
-  text-align: center;
-}
-.topOfPage:hover {
-  background: red;
-}
 
 
 /* Table Styles */
@@ -27,6 +20,9 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+.portfolio-item {
+    margin-bottom: 30px;
+}
 
 /* Form Styles */
 
@@ -38,7 +34,7 @@ tr:nth-child(even) {
 .myFooter {
     background-color: #f5f5f5;
     bottom: 0;
-    height: 2em;
+    height: 3em;
     position: absolute;
     text-align: center;
     width: 100%;
