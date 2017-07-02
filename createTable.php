@@ -26,7 +26,7 @@ function makeTable($agg_Type){
       echo "</div>";
     // End Titlebar
     // Table Container
-      echo "<div class='result-table'>";
+      echo "<div class='result-table z-depth-2'>";
       echo "<div class='table-responsive'>";
       echo "<table class='table-test table'>"; //begin table tag...
       echo "<tr>
@@ -98,7 +98,7 @@ function makeTable($agg_Type){
         echo "</div>";
       // End Titlebar
       // Table Container
-        echo "<div class='result-table'>";
+        echo "<div class='result-table z-depth-2'>";
         echo "<div class='table-responsive'>";
         echo "<table class='table-test table'>"; //begin table tag...
         echo "<tr>

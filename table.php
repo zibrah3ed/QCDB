@@ -7,7 +7,7 @@
   <title>QC DB Front End</title>
 
     <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Lobster" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,500" rel="stylesheet">
     <!-- Personal Style Sheet -->
       <link rel="stylesheet" href="styles.css">
 
@@ -29,7 +29,7 @@
         </button>
         <a class="navbar-brand" href="index.html">QC Database</a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <!-- <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right">
           <div class="form-group">
             <input type="text" placeholder="Email" class="form-control" autocomplete="off">
@@ -39,7 +39,7 @@
           </div>
           <button type="submit" class="btn btn-success">Sign in</button>
         </form>
-      </div><!--/.navbar-collapse -->
+      </div></.navbar-collapse --> 
     </div>
   </nav>
   <!-- Banner at top of page -->
