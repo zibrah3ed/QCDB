@@ -96,7 +96,6 @@
     <footer class="footer navbar-fixed-bottom myFooter">
         <p class="text-muted">
           -- © 2017 Tyson Funk --
-          <a href="http://www.freepik.com/free-photos-vectors/background">Background image created by Asierromero - Freepik.com</a>
         </p>
     <!-- End Footer Fixed -->
 
