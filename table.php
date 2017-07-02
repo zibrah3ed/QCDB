@@ -92,10 +92,13 @@
       </div>
     </div>
 
-  <!-- Footer -->
-  <footer class="footer navbar-fixed-bottom myFooter">
-      <p class="text-muted">-- © 2017 Tyson Funk -- </p>
-  </footer>
+    <!-- Footer Fixed -->
+    <footer class="footer navbar-fixed-bottom myFooter">
+        <p class="text-muted">
+          -- © 2017 Tyson Funk --
+          <a href="http://www.freepik.com/free-photos-vectors/background">Background image created by Asierromero - Freepik.com</a>
+        </p>
+    <!-- End Footer Fixed -->
 
   <!-- Load JS at end of page -->
   <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->

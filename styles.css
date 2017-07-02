@@ -84,3 +84,6 @@ td, th {
     -webkit-box-shadow: 0 17px 17px 0 rgba(0,0,0,0.15),0 27px 55px 0 rgba(0,0,0,0.3);
     box-shadow: 0 17px 17px 0 rgba(0,0,0,0.15),0 27px 55px 0 rgba(0,0,0,0.3);
 }
+#sel1 {
+  margin-bottom: 1em;
+}
