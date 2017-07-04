@@ -88,7 +88,52 @@
 <!-- End Gradation Tables -->
 
 <div class="container bottom-margin z-depth-2">
+  <div class="chart-title">
+    <h1 class="chart-title">Individual Aggregates</h1>
+    <!-- Start Chart Labels -->
+    <div id="labels"> Coarse:
+      <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0"
+          width="14" height="14"
+          rx="2" ry="2"
+          class="label-series-coarse"
+          />
+      </svg>
+      &nbsp;&nbsp;Fine:
+      <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0"
+          width="14" height="14"
+          rx="2" ry="2"
+          class="label-series-fine"
+        />
+      </svg>
+    &nbsp;&nbsp;Intermediate One:
+      <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0"
+          width="14" height="14"
+          rx="2" ry="2"
+          class="label-series-int1"
+        />
+      </svg>
+    &nbsp;&nbsp;Intermediate Two:
+      <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0"
+          width="14" height="14"
+          rx="2" ry="2"
+          class="label-series-int2"
+        />
+      </svg>
+  </div>
+</div>
+  <!-- End Labels -->
   <div class="ct-chart ct-golden-section" id="chart1"></div>
+</div>
+<div class="container bottom-margin z-depth-2">
+  <div class="chart-title">
+    <h1 class="chart-title">JMF</h1>
+  </div>
+  <div class="ct-chart ct-golden-section" id="chart2"></div>
+</div>
 </div>
 <!-- Graph Creation Script -->
 <script>

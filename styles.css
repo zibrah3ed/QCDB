@@ -103,4 +103,90 @@ td, th {
 
 #chart1 {
   font-size: 1.5rem;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+.chart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#labels{
+  border-radius:4px;
+  display;block;
+  height: 30px;
+  margin-bottom: 20px;
+  padding-top:10px;
+  text-align:center;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.label-series-fine{
+  stroke: #D70206;
+  fill: #D70206;
+  stroke-width: 4px;
+}
+
+.label-series-coarse{
+  stroke: #F05B4F;
+  fill: #F05B4F;
+  stroke-width: 4px;
+}
+
+.label-series-int1{
+  stroke:#F4C63D;
+  fill:#F4C63D;
+  stroke-width: 4px;
+}
+
+.label-series-int2{
+  stroke:#D17905;
+  fill:#D17905;
+  border-radius: 1px;
+  stroke-width: 4px;
+}
+
+/*Fine aggregate series*/
+.ct-series-a .ct-line {
+  stroke-width: 5px;
+}
+
+.ct-series-a .ct-point {
+  stroke-width: 10px;
+  stroke-linecap: square;
+}
+
+/*Coarse Aggregate Series*/
+.ct-series-b .ct-line {
+  stroke-width: 5px;
+}
+
+.ct-series-b .ct-point {
+  stroke-width: 10px;
+  stroke-linecap: square;
+}
+
+/*Intermediate Aggregate Two Aggregate Series*/
+.ct-series-c .ct-line {
+  stroke-width: 5px;
+}
+
+.ct-series-c .ct-point {
+  stroke-width: 10px;
+  stroke-linecap: square;
+}
+
+/*Intermediate Aggregate One Aggregate Series*/
+.ct-series-d .ct-line {
+  stroke: black;
+  stroke-width: 5px;
+}
+
+.ct-series-d .ct-point {
+  stroke: black;
+  stroke-width: 10px;
+  stroke-linecap: square;
 }
