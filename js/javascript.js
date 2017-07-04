@@ -4,7 +4,7 @@ function createAggArray(aggregate,array,size){
     var search = '';
     for (i = 0; i < size; i++){
       search = aggregate + (i + 1).toString();
-      array[i] = document.getElementById(search).innerHTML;
+      array[i] = parseInt(document.getElementById(search).innerHTML);
     };
   };
 

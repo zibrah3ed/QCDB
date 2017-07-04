@@ -230,7 +230,32 @@
         <p class="text-muted">
           -- © 2017 Tyson Funk --
           <script>
-            createAggArray('Fine',fineArray,13);
+          function jmfArray(arr1,arr2,arr3,arr4,13) {
+            var fineJMF = parseInt(document.getElementById("FineJMF").innerHTML);
+            var coarseJMF = parseInt(document.getElementById("CoarseJMF").innerHTML);
+            var intJMF = parseInt(document.getElementById("IntJMF").innerHTML);
+            var int2JMF = parseInt(document.getElementById("Int2JMF").innerHTML);
+            var fineJMFArray = fineArray;
+            var coarseJMFArray = coarseArray;
+            var intJMFArray = intArray;
+            var int2JMFArray = intArray2;
+
+            for (var i=0; i < fineJMFArray.length; i++){
+              fineJMFArray[i] = fineJMFArray[i] * fineJMF / 100;
+            };
+            for (var i=0; i < coarseJMFArray.length; i++){
+              coarseJMFArray[i] = coarseJMFArray[i] * fineJMF / 100;
+            };
+            for (var i=0; i < intJMFArray.length; i++){
+              intJMFArray[i] = intJMFArray[i] * fineJMF / 100;
+            };
+            for (var i=0; i < int2JMFArray.length; i++){
+              int2JMFArray[i] = int2JMFArray[i] * fineJMF / 100;
+            };
+          };
+
+          jmf
+
           </script>
         </p>
     <!-- End Footer Fixed -->
@@ -240,8 +265,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script>
-
-    </script>
   </body>
 </html>
