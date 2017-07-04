@@ -30,6 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+        <button class="btn btn-danger navbar-btn" onclick="goBack()">Back</button>
         <a class="navbar-brand" href="index.html">QC Database</a>
       </div>
       <!-- <div id="navbar" class="navbar-collapse collapse">
@@ -199,5 +200,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    function goBack() {
+        window.history.back();
+    };
+    </script>
   </body>
 </html>
