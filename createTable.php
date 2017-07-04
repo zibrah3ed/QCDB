@@ -7,8 +7,13 @@ function makeTable($agg_Type){
   $sieveRowArray = array("sieve2inch", "sieve15inch", "sieve1inch",
             "sieve34inch", "sieveNo4", "sieve12inch", "sieve38inch", "sieveNo8", "sieveNo16", "sieveNo30",
             "sieveNo50","sieveNo100","sieveNo200");
-  // Array if sieve labels
+
+  // Array of sieve labels
   $sieveDescArray = array('2.0"','1.5"','1.0"','3/4"','1/2"','3/8"','#4','#8','#16','#30','#50','#100','#200');
+
+  // Array of tabletop ids
+  $tableTopArray = array('KossProjNum','aggLocalName','aggProducer','aggType','aggPercent');
+
   // Get job number from url on form submit
   $jobNum = $_GET["jobNum"];
 
@@ -116,59 +121,16 @@ function makeTable($agg_Type){
                 <th class='col-xs-3'>Sieve</th>
                 <th class='col-xs-3'>% Retained</th>
               </tr>";
-              echo "<tr>";
-              echo "<td>2.0</td>";
-              echo "<td id=".$agg_Type."1>" . "--</td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>1.5</td>";
-              echo "<td id=".$agg_Type."2>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>1.0</td>";
-              echo "<td id=".$agg_Type."3>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>3/4</td>";
-              echo "<td id=".$agg_Type."4>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>1/2</td>";
-              echo "<td id=".$agg_Type."5>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>3/8</td>";
-              echo "<td id=".$agg_Type."6>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.4</td>";
-              echo "<td id=".$agg_Type."7>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.8</td>";
-              echo "<td id=".$agg_Type."8>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.16</td>";
-              echo "<td id=".$agg_Type."9>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.30</td>";
-              echo "<td id=".$agg_Type."10>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.50</td>";
-              echo "<td id=".$agg_Type."11>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.100</td>";
-              echo "<td id=".$agg_Type."12>" . " -- </td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>No.200</td>";
-              echo "<td id=".$agg_Type."13>" . " -- </td>";
-              echo "</tr>";
 
+        // Create Empty Table using sieve arrays defined at top of page      
+        $i = 1;
+        while ($i < (count($sieveDescArray) + 1)) {
+          echo "<tr>";
+          echo "<td>". $sieveDescArray[$i] ."</td>";
+          echo "<td id=" . $agg_Type . ($i) . ">--</td>";
+          echo "</tr>";
+          $i++;
+          };
   }
   echo "</table>";
   echo "</div></div>";

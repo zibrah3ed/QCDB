@@ -133,7 +133,7 @@
   // Intermediate Aggregate One, test for existence of tag default value of " -- " to
   // determine if the line should be created
   intTest = document.getElementById('Int13').innerHTML;
-  if (intTest !== " -- " ) {
+  if (intTest !== null ) {
     var intArray = [ document.getElementById('Int13').innerHTML,
                    document.getElementById('Int12').innerHTML,
                    document.getElementById('Int11').innerHTML,
