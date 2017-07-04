@@ -96,7 +96,7 @@
     </div>
 <!-- End Gradation Tables -->
 
-<div class="container bottom-margin">
+<div class="container bottom-margin z-depth-2">
   <div class="ct-chart ct-golden-section" id="chart1"></div>
 </div>
 <!-- Graph Creation Script -->

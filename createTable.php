@@ -28,7 +28,7 @@ function makeTable($agg_Type){
     // Table Container
       echo "<div class='result-table z-depth-2'>";
       echo "<div class='table-responsive'>";
-      echo "<table class='table-test table'>"; //begin table tag...
+      echo "<table class='table-test table table-striped'>"; //begin table tag...
       echo "<tr>
               <th class='col-xs-3'>Sieve</th>
               <th class='col-xs-3'>% Retained</th>
@@ -100,7 +100,7 @@ function makeTable($agg_Type){
       // Table Container
         echo "<div class='result-table z-depth-2'>";
         echo "<div class='table-responsive'>";
-        echo "<table class='table-test table'>"; //begin table tag...
+        echo "<table class='table-test table table-striped'>"; //begin table tag...
         echo "<tr>
                 <th class='col-xs-3'>Sieve</th>
                 <th class='col-xs-3'>% Retained</th>
