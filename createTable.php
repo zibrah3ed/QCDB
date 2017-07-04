@@ -38,7 +38,7 @@ function makeTable($agg_Type){
       echo "<p>Agg Name : " . htmlspecialchars($rowitem['aggLocalName']) . "</p>";
       echo "<p>Producer : " . htmlspecialchars($rowitem['aggProducer']) . "</p>";
       echo "<p>Agg Type : " . htmlspecialchars($rowitem['aggType']) . "</p>";
-      echo "<p>JMF% : " . $rowitem['aggPercent'] . "</p>";
+      echo "<p id=".$aggType."JMF>JMF% : " . $rowitem['aggPercent'] . "</p>";
       echo "</div>";
     // End Titlebar
     // Table Container

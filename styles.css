@@ -89,3 +89,7 @@ td, th {
 #sel1 {
   margin-bottom: 1em;
 }
+/* Chart styles */
+#chart1 {
+  font-size: 2em;
+}

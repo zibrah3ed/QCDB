@@ -18,6 +18,7 @@
       <!-- Chartist -->
       <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
       <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+      <script src="js/chartist-plugin-axistitle.js"></script>
 
 </head>
 <body>
@@ -138,6 +139,39 @@ function createAggArray(aggregate,array,size){
                 // Intermediate Aggregate 2
               intArray2
          ]
+  }, {
+    chartPadding: {
+      top: 20,
+      right: 0,
+      bottom: 30,
+      left: 0
+    },
+    axisY: {
+      onlyInteger: true
+    },
+    plugins: [
+      Chartist.plugins.ctAxisTitle({
+        axisX: {
+          axisTitle: 'Sieve Size',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 50
+          },
+          textAnchor: 'middle'
+        },
+        axisY: {
+          axisTitle: '% Retained',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 0
+          },
+          textAnchor: 'middle',
+          flipTitle: false
+        }
+      })
+    ]
   });
 </script>
 
