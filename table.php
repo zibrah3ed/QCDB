@@ -101,7 +101,7 @@
 </div>
 <!-- Graph Creation Script -->
 <script>
-  // Initialize a Line chart in the container with the ID chart1
+
   var fineArray = [document.getElementById('Fine13').innerHTML,
                    document.getElementById('Fine12').innerHTML,
                    document.getElementById('Fine11').innerHTML,
@@ -130,7 +130,10 @@
                    document.getElementById('Coarse2').innerHTML,
                    document.getElementById('Coarse1').innerHTML
                 ];
-  if (document.getElementById("Int1").innerHTML != "--") {
+  // Intermediate Aggregate One, test for existence of tag default value of " -- " to
+  // determine if the line should be created
+  intTest = document.getElementById('Int13').innerHTML;
+  if (intTest !== " -- " ) {
     var intArray = [ document.getElementById('Int13').innerHTML,
                    document.getElementById('Int12').innerHTML,
                    document.getElementById('Int11').innerHTML,
@@ -146,8 +149,28 @@
                    document.getElementById('Int1').innerHTML
                 ];
               } else {
-                var intArray = [0,0,0,0,0,0,0,0,0,0,0,0,0];
-              }
+                var intArray = [];
+              };
+      intTest2 = document.getElementById('Int213').innerHTML;
+      if (intTest2 !== " -- " ) {
+          var intArray2 = [ document.getElementById('Int213').innerHTML,
+                               document.getElementById('Int212').innerHTML,
+                               document.getElementById('Int211').innerHTML,
+                               document.getElementById('Int210').innerHTML,
+                               document.getElementById('Int29').innerHTML,
+                               document.getElementById('Int28').innerHTML,
+                               document.getElementById('Int27').innerHTML,
+                               document.getElementById('Int26').innerHTML,
+                               document.getElementById('Int25').innerHTML,
+                               document.getElementById('Int24').innerHTML,
+                               document.getElementById('Int23').innerHTML,
+                               document.getElementById('Int22').innerHTML,
+                               document.getElementById('Int21').innerHTML
+                            ];
+                          } else {
+                            var intArray2 = [];
+                          };
+  // Initialize a Line chart in the container with the ID chart1
   new Chartist.Line('#chart1', {
     labels: ['#200', '#100', '#50', '#30', '#16', '#8', '#4', '3/8"', '1/2"', '3/4"', '1.0"', '1.5"', '2.0"' ],
     series: [
@@ -156,7 +179,9 @@
                 //Coarse Aggregate
               coarseArray,
                 //Intermediate Aggregate
-              intArray
+              intArray,
+                // Intermediate Aggregate 2
+              intArray2
          ]
   });
 </script>
