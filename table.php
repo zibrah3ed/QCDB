@@ -103,77 +103,42 @@
 <!-- Graph Creation Script -->
 <script>
 
-  var fineArray = [document.getElementById('Fine13').innerHTML,
-                   document.getElementById('Fine12').innerHTML,
-                   document.getElementById('Fine11').innerHTML,
-                   document.getElementById('Fine10').innerHTML,
-                   document.getElementById('Fine9').innerHTML,
-                   document.getElementById('Fine8').innerHTML,
-                   document.getElementById('Fine7').innerHTML,
-                   document.getElementById('Fine6').innerHTML,
-                   document.getElementById('Fine5').innerHTML,
-                   document.getElementById('Fine4').innerHTML,
-                   document.getElementById('Fine3').innerHTML,
-                   document.getElementById('Fine2').innerHTML,
-                   document.getElementById('Fine1').innerHTML,
-                ];
-  var coarseArray = [ document.getElementById('Coarse13').innerHTML,
-                   document.getElementById('Coarse12').innerHTML,
-                   document.getElementById('Coarse11').innerHTML,
-                   document.getElementById('Coarse10').innerHTML,
-                   document.getElementById('Coarse9').innerHTML,
-                   document.getElementById('Coarse8').innerHTML,
-                   document.getElementById('Coarse7').innerHTML,
-                   document.getElementById('Coarse6').innerHTML,
-                   document.getElementById('Coarse5').innerHTML,
-                   document.getElementById('Coarse4').innerHTML,
-                   document.getElementById('Coarse3').innerHTML,
-                   document.getElementById('Coarse2').innerHTML,
-                   document.getElementById('Coarse1').innerHTML
-                ];
+// Create array in preparation for chartist. Aggregate type as string
+// array name to be appended, and size of array
+function createAggArray(aggregate,array,size){
+  var search = '';
+  for (i = 0; i < size; i++){
+    search = aggregate + (i + 1).toString();
+    array[i] = 100 - document.getElementById(search).innerHTML;
+  };
+};
+  // Fine agg array
+  var fineArray = []
+  createAggArray('Fine',fineArray,13);
+
+  // Coarse agg array
+  var coarseArray = [];
+  createAggArray("Coarse",coarseArray,13);
+
   // Intermediate Aggregate One, test for existence of tag default value of " -- " to
   // determine if the line should be created
+  var intArray = [];
   intTest = document.getElementById('Int13').innerHTML;
+
   if (intTest !== null ) {
-    var intArray = [ document.getElementById('Int13').innerHTML,
-                   document.getElementById('Int12').innerHTML,
-                   document.getElementById('Int11').innerHTML,
-                   document.getElementById('Int10').innerHTML,
-                   document.getElementById('Int9').innerHTML,
-                   document.getElementById('Int8').innerHTML,
-                   document.getElementById('Int7').innerHTML,
-                   document.getElementById('Int6').innerHTML,
-                   document.getElementById('Int5').innerHTML,
-                   document.getElementById('Int4').innerHTML,
-                   document.getElementById('Int3').innerHTML,
-                   document.getElementById('Int2').innerHTML,
-                   document.getElementById('Int1').innerHTML
-                ];
-              } else {
-                var intArray = [];
-              };
-      intTest2 = document.getElementById('Int213').innerHTML;
-      if (intTest2 !== " -- " ) {
-          var intArray2 = [ document.getElementById('Int213').innerHTML,
-                               document.getElementById('Int212').innerHTML,
-                               document.getElementById('Int211').innerHTML,
-                               document.getElementById('Int210').innerHTML,
-                               document.getElementById('Int29').innerHTML,
-                               document.getElementById('Int28').innerHTML,
-                               document.getElementById('Int27').innerHTML,
-                               document.getElementById('Int26').innerHTML,
-                               document.getElementById('Int25').innerHTML,
-                               document.getElementById('Int24').innerHTML,
-                               document.getElementById('Int23').innerHTML,
-                               document.getElementById('Int22').innerHTML,
-                               document.getElementById('Int21').innerHTML
-                            ];
-                          } else {
-                            var intArray2 = [];
-                          };
+    createAggArray("Int",intArray,13);
+  };
+
+  var intArray2 = [];
+  intTest2 = document.getElementById('Int213').innerHTML;
+
+  if (intTest2 !== null ) {
+    createAggArray("Int2",intArray2,13);
+  };
+
   // Initialize a Line chart in the container with the ID chart1
   new Chartist.Line('#chart1', {
-    labels: ['#200', '#100', '#50', '#30', '#16', '#8', '#4', '3/8"', '1/2"', '3/4"', '1.0"', '1.5"', '2.0"' ],
+    labels: ['2.0"','1.5"','1.0"','3/4"', '1/2"','3/8"','#4', '#8','#16','#30','#50','#100','#200'],
     series: [
                 // Fine Aggregate
               fineArray,
@@ -192,6 +157,9 @@
     <footer class="footer navbar-fixed-bottom myFooter">
         <p class="text-muted">
           -- © 2017 Tyson Funk --
+          <script>
+            createAggArray('Fine',fineArray,13);
+          </script>
         </p>
     <!-- End Footer Fixed -->
 
