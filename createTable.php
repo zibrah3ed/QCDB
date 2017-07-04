@@ -122,11 +122,11 @@ function makeTable($agg_Type){
                 <th class='col-xs-3'>% Retained</th>
               </tr>";
 
-        // Create Empty Table using sieve arrays defined at top of page      
+        // Create Empty Table using sieve arrays defined at top of page
         $i = 1;
         while ($i < (count($sieveDescArray) + 1)) {
           echo "<tr>";
-          echo "<td>". $sieveDescArray[$i] ."</td>";
+          echo "<td>". $sieveDescArray[($i-1)] ."</td>";
           echo "<td id=" . $agg_Type . ($i) . ">--</td>";
           echo "</tr>";
           $i++;

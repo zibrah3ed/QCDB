@@ -33,17 +33,6 @@
         <button class="btn btn-danger navbar-btn" onclick="goBack()">Back</button>
         <a class="navbar-brand" href="index.html">QC Database</a>
       </div>
-      <!-- <div id="navbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <input type="text" placeholder="Email" class="form-control" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <input type="password" placeholder="Password" class="form-control" autocomplete="off">
-          </div>
-          <button type="submit" class="btn btn-success">Sign in</button>
-        </form>
-      </div></.navbar-collapse -->
     </div>
   </nav>
   <!-- Banner at top of page -->
@@ -106,12 +95,12 @@
 // Create array in preparation for chartist. Aggregate type as string
 // array name to be appended, and size of array
 function createAggArray(aggregate,array,size){
-  var search = '';
-  for (i = 0; i < size; i++){
-    search = aggregate + (i + 1).toString();
-    array[i] = 100 - document.getElementById(search).innerHTML;
+    var search = '';
+    for (i = 0; i < size; i++){
+      search = aggregate + (i + 1).toString();
+      array[i] = document.getElementById(search).innerHTML;
+    };
   };
-};
   // Fine agg array
   var fineArray = []
   createAggArray('Fine',fineArray,13);
