@@ -19,6 +19,7 @@
       <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
       <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
       <script src="js/chartist-plugin-axistitle.js"></script>
+      <script src="js/javascript.js"></script>
 
 </head>
 <body>
@@ -137,16 +138,6 @@
 </div>
 <!-- Graph Creation Script -->
 <script>
-
-// Create array in preparation for chartist. Aggregate type as string
-// array name to be appended, and size of array
-function createAggArray(aggregate,array,size){
-    var search = '';
-    for (i = 0; i < size; i++){
-      search = aggregate + (i + 1).toString();
-      array[i] = document.getElementById(search).innerHTML;
-    };
-  };
   // Fine agg array
   var fineArray = []
   createAggArray('Fine',fineArray,13);
@@ -170,6 +161,7 @@ function createAggArray(aggregate,array,size){
   if (intTest2 !== null ) {
     createAggArray("Int2",intArray2,13);
   };
+
 
   // Initialize a Line chart in the container with the ID chart1
   new Chartist.Line('#chart1', {
@@ -249,9 +241,7 @@ function createAggArray(aggregate,array,size){
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-    function goBack() {
-        window.history.back();
-    };
+
     </script>
   </body>
 </html>
