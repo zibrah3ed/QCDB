@@ -11,3 +11,31 @@ function createAggArray(aggregate,array,size){
   function goBack() {
       window.history.back();
   };
+  function jmfArray(arr1,arr2,arr3,arr4) {
+    var fineJMF = parseInt(document.getElementById("FineJMF").innerHTML);
+    var coarseJMF = parseInt(document.getElementById("CoarseJMF").innerHTML);
+    var intJMF = parseInt(document.getElementById("IntJMF").innerHTML);
+    var int2JMF = parseInt(document.getElementById("Int2JMF").innerHTML);
+    var fineJMFArray = arr1;
+    var coarseJMFArray = arr2;
+    var intJMFArray = arr3;
+    var int2JMFArray = arr4;
+    var combinedArray = [];
+
+    for (var i=0; i < fineJMFArray.length; i++){
+      fineJMFArray[i] = fineJMFArray[i] * fineJMF / 100;
+    };
+    for (var i=0; i < coarseJMFArray.length; i++){
+      coarseJMFArray[i] = coarseJMFArray[i] * fineJMF / 100;
+    };
+    for (var i=0; i < intJMFArray.length; i++){
+      intJMFArray[i] = intJMFArray[i] * fineJMF / 100;
+    };
+    for (var i=0; i < int2JMFArray.length; i++){
+      int2JMFArray[i] = int2JMFArray[i] * fineJMF / 100;
+    };
+    for (var i=0; i < fineJMFArray.length; i++){
+      combinedArray[i] = fineJMFArray[i] + coarseJMFArray[i] + intJMFArray[i] + int2JMFArray[i];
+    }
+    return combinedArray;
+  };

@@ -162,6 +162,9 @@
     createAggArray("Int2",intArray2,13);
   };
 
+  var jmfData = jmfArray(fineArray,coarseArray,intArray,intArray2);
+
+
 
   // Initialize a Line chart in the container with the ID chart1
   new Chartist.Line('#chart1', {
@@ -222,6 +225,51 @@
       })
     ]
   });
+
+  // Chart 2
+  new Chartist.Line('#chart2', {
+    labels: ['2.0"','1.5"','1.0"','3/4"', '1/2"','3/8"','#4', '#8','#16','#30','#50','#100','#200'],
+    series: [
+              {
+                // Intermediate Aggregate 2
+                name: 'JMF',
+                data: jmfData
+              }
+         ]
+  }, {
+    chartPadding: {
+      top: 20,
+      right: 0,
+      bottom: 50,
+      left: 0
+    },
+    axisY: {
+      onlyInteger: true
+    },
+    plugins: [
+      Chartist.plugins.ctAxisTitle({
+        axisX: {
+          axisTitle: 'Sieve Size',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 50
+          },
+          textAnchor: 'middle'
+        },
+        axisY: {
+          axisTitle: '% Retained',
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 0
+          },
+          textAnchor: 'middle',
+          flipTitle: false
+        }
+      })
+    ]
+  });
 </script>
 
 
@@ -230,31 +278,6 @@
         <p class="text-muted">
           -- © 2017 Tyson Funk --
           <script>
-          function jmfArray(arr1,arr2,arr3,arr4,13) {
-            var fineJMF = parseInt(document.getElementById("FineJMF").innerHTML);
-            var coarseJMF = parseInt(document.getElementById("CoarseJMF").innerHTML);
-            var intJMF = parseInt(document.getElementById("IntJMF").innerHTML);
-            var int2JMF = parseInt(document.getElementById("Int2JMF").innerHTML);
-            var fineJMFArray = fineArray;
-            var coarseJMFArray = coarseArray;
-            var intJMFArray = intArray;
-            var int2JMFArray = intArray2;
-
-            for (var i=0; i < fineJMFArray.length; i++){
-              fineJMFArray[i] = fineJMFArray[i] * fineJMF / 100;
-            };
-            for (var i=0; i < coarseJMFArray.length; i++){
-              coarseJMFArray[i] = coarseJMFArray[i] * fineJMF / 100;
-            };
-            for (var i=0; i < intJMFArray.length; i++){
-              intJMFArray[i] = intJMFArray[i] * fineJMF / 100;
-            };
-            for (var i=0; i < int2JMFArray.length; i++){
-              int2JMFArray[i] = int2JMFArray[i] * fineJMF / 100;
-            };
-          };
-
-          jmf
 
           </script>
         </p>
