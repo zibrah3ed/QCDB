@@ -33,13 +33,33 @@ function makeTable($agg_Type){
   if ($result->num_rows > 0) {
     // Title bar at top of table
       $rowitem = mysqli_fetch_array($result);
-      echo "<div class='table-top z-depth-1'";
-      echo "<p>Koss # : " . htmlspecialchars($rowitem['KossProjNum']) . "</p>";
-      echo "<p>Agg Name : " . htmlspecialchars($rowitem['aggLocalName']) . "</p>";
-      echo "<p>Producer : " . htmlspecialchars($rowitem['aggProducer']) . "</p>";
-      echo "<p>Agg Type : " . htmlspecialchars($rowitem['aggType']) . "</p>";
-      echo "<p id=".$aggType."JMF>JMF% : " . $rowitem['aggPercent'] . "</p>";
+      // Create Table top data
+      echo "<div class='table-top z-depth-1'>";
+      echo "<table>";
+      echo "<tr>";
+      echo "<td>Koss # </td>";
+      echo "<td>" . htmlspecialchars($rowitem['KossProjNum']) . "</td>";
+      echo"</tr>";
+      echo "<tr>";
+      echo "<td>Aggregate Name</td>";
+      echo "<td>" . htmlspecialchars($rowitem['aggLocalName']) . "</td>";
+      echo"</tr>";
+      echo "<tr>";
+      echo "<td>Producer</td>";
+      echo "<td>" . htmlspecialchars($rowitem['aggProducer']) . "</td>";
+      echo"</tr>";
+      echo "<tr>";
+      echo "<td>Type</td>";
+      echo "<td>" . htmlspecialchars($rowitem['aggType']) . "</td>";
+      echo"</tr>";
+      // add unique ID to jmf percent to calculate combined.
+      echo "<tr>";
+      echo "<td>Mix Percentage</td>";
+      echo "<td id=".$agg_Type."JMF>" . htmlspecialchars($rowitem['aggPercent']) . "</td>";
+      echo"</tr>";
+      echo "</table>";
       echo "</div>";
+
     // End Titlebar
     // Table Container
       echo "<div class='result-table z-depth-2'>";
@@ -105,12 +125,31 @@ function makeTable($agg_Type){
       echo "</tr>";
     }
       } else {
-        echo "<div class='table-top z-depth-1'";
-        echo "<p>Koss # : -- </p>";
-        echo "<p>Agg Name : -- </p>";
-        echo "<p>Producer : -- </p>";
-        echo "<p>Agg Type : -- </p>";
-        echo "<p>JMF% : -- </p>";
+        // Create Table top data
+        echo "<div class='table-top z-depth-1'>";
+        echo "<table>";
+        echo "<tr>";
+        echo "<td>Koss # </td>";
+        echo "<td>--</td>";
+        echo"</tr>";
+        echo "<tr>";
+        echo "<td>Aggregate Name</td>";
+        echo "<td>--</td>";
+        echo"</tr>";
+        echo "<tr>";
+        echo "<td>Producer</td>";
+        echo "<td>--</td>";
+        echo"</tr>";
+        echo "<tr>";
+        echo "<td>Type</td>";
+        echo "<td>--</td>";
+        echo"</tr>";
+        // add unique ID to jmf percent to calculate combined.
+        echo "<tr>";
+        echo "<td>Mix Percentage</td>";
+        echo "<td id=".$agg_Type."JMF>--</td>";
+        echo"</tr>";
+        echo "</table>";
         echo "</div>";
       // End Titlebar
       // Table Container
