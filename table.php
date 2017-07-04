@@ -130,20 +130,32 @@ function createAggArray(aggregate,array,size){
   new Chartist.Line('#chart1', {
     labels: ['2.0"','1.5"','1.0"','3/4"', '1/2"','3/8"','#4', '#8','#16','#30','#50','#100','#200'],
     series: [
+              {
                 // Fine Aggregate
-              fineArray,
+                name: 'Fine_Aggregate',
+                data: fineArray
+              },
+              {
                 //Coarse Aggregate
-              coarseArray,
+                name: 'Coarse_Aggregate',
+                data: coarseArray
+              },
+              {
                 //Intermediate Aggregate
-              intArray,
+                name: 'Intermediate_One',
+                data: intArray
+              },
+              {
                 // Intermediate Aggregate 2
-              intArray2
+                name: 'Intermediate_Two',
+                data: intArray2
+              }
          ]
   }, {
     chartPadding: {
       top: 20,
       right: 0,
-      bottom: 30,
+      bottom: 50,
       left: 0
     },
     axisY: {
