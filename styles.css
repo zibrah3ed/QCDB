@@ -70,6 +70,9 @@ td, th {
     margin: 20px auto;
 }
 
+.button-margin {
+  margin: 25px 0px 25px 0px;
+}
 /* Depth styling */
 .z-depth-1 {
     -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);

@@ -25,7 +25,7 @@ function makeTable($agg_Type){
             FROM Jobs
             INNER JOIN gradations ON Jobs.job_id = gradations.Jobs_job_id
             INNER JOIN aggregate ON gradations.aggregate_agg_id = aggregate.agg_id
-            where Jobs.kossProjNum = '$jobNum' AND aggregate.aggType = '$agg_Type'";
+            where Jobs.kossProjNum = '$jobNum' AND aggregate.aggType = '$agg_Type' AND gradations.lot = 'MixDesign'";
 
   // Establish connection
   $result = $conn->query($sql);
