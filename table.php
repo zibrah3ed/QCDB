@@ -162,7 +162,43 @@
     createAggArray("Int2",intArray2,13);
   };
 
-  var jmfData = jmfArray(fineArray,coarseArray,intArray,intArray2);
+  // JMF Variables, from SQL QUERY
+  var fineJMF = parseInt(document.getElementById("FineJMF").innerHTML);
+  var coarseJMF = parseInt(document.getElementById("CoarseJMF").innerHTML);
+  var intJMF = parseInt(document.getElementById("IntJMF").innerHTML);
+  var int2JMF = parseInt(document.getElementById("Int2JMF").innerHTML);
+
+  // Arrays to temporarily hold weighted JMF data defaulted to 0
+  var fineJMFArray = new Uint8Array(13);
+  var coarseJMFArray = new Uint8Array(13);
+  var intJMFArray = new Uint8Array(13);
+  var int2JMFArray = new Uint8Array(13);
+  var addedJMFArray = new Uint8Array(13);
+
+  // Weight array values
+
+  function jmfWeighted(inputArray,jmf,outputArray){
+    if (jmf == "--") {
+      for (var i=0; i < inputArray.length; i++){
+        outputArray[i] = inputArray[i] * jmf / 100;
+      };
+    };
+      return outputArray;
+  };
+
+  function addArrays(arr1,arr2,arr3,arr4,outputArray) {
+    for(i=0; i < arr1.length; i++ ) {
+      outputArray = arr1[i] + arr2[i] + arr3[i] + arr4[i];
+      return outputArray;
+    };
+  };
+
+  addArrays(              jmfWeighted(fineArray,fineJMF,fineJMFArray),
+                          jmfWeighted(coarseArray,coarseJMF,coarseJMFArray),
+                          jmfWeighted(intArray,intJMF,intJMFArray),
+                          jmfWeighted(intArray2,int2JMF,int2JMFArray),
+                          addedJMFArray);
+
 
 
 
@@ -233,7 +269,7 @@
               {
                 // Intermediate Aggregate 2
                 name: 'JMF',
-                data: jmfData
+                data: addedJMFArray
               }
          ]
   }, {
