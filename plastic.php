@@ -22,7 +22,7 @@
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -36,18 +36,334 @@
     </div>
   </nav>
   <!-- Banner at top of page -->
-  <div class="jumbotron">
-    <div class="container lobster-text">
-      <h1>Plastic Concrete Tests</h1>
-    </div>
-  </div>
-<!-- End Banner -->
-  <div class="sidebar">
+  <div class="container-fluid ">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header ">
+				<h1 class='lobster-text findme'>
+					Plastic Test Dashboard
+				</h1>
+			</div>
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html">Home</a><span class="divider"></span>
+				</li>
+				<li class="active">
+					Plastic Test Dashboard
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn-group">
 
-  </div>
-  <div class="mainContent">
+				<button class="btn btn-default">
+					Job Number
+				</button>
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li class="disabled">
+						<a href="#">Another action</a>
+					</li>
+					<li class="divider">
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+				</ul>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Product
+						</th>
+						<th>
+							Payment Taken
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="active">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="danger">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
 
-  </div>
+				<button class="btn btn-default">
+					Action
+				</button>
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li class="disabled">
+						<a href="#">Another action</a>
+					</li>
+					<li class="divider">
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+				</ul>
+			</div>
+			<h2>
+				Heading
+			</h2>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<grammarly>
+				<div class="_e725ae-textarea_btn _e725ae-show _e725ae-minimized _e725ae-minimize_transition _e725ae-field_hovered">
+					<div class="_e725ae-transform_wrap">
+						<div class="_e725ae-status">
+						</div>
+					</div>
+				</div>
+			</grammarly>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
+
+				<button class="btn btn-default">
+					Action
+				</button>
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li class="disabled">
+						<a href="#">Another action</a>
+					</li>
+					<li class="divider">
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+				</ul>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Product
+						</th>
+						<th>
+							Payment Taken
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="active">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="danger">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="media well">
+				 <a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						Nested media heading
+					</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+					<div class="media">
+						 <a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
+						<div class="media-body">
+							<h4 class="media-heading">
+								Nested media heading
+							</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="media well">
+				 <a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						Nested media heading
+					</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+					<div class="media">
+						 <a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
+						<div class="media-body">
+							<h4 class="media-heading">
+								Nested media heading
+							</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
   <!-- Footer Fixed -->
   <footer class="footer navbar-fixed-bottom myFooter">
       <p class="text-muted">

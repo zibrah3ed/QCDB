@@ -2,8 +2,11 @@
   include 'config.php';
   include 'opendb.php';
       // Get variable from form submit
-      function makeTableLong($job) {
+      function makeTableLong($job,$lot) {
 
+      // Get job number from url on form submit
+      $jobNum = $_GET["jobNum"];
+      
       $sql = "SELECT Jobs_job_id, aggPercent, Aggregate_agg_id, sieve2inch, sieve15inch, sieve1inch,
                 sieve34inch, sieveNo4, sieve12inch, sieve38inch, sieveNo8, sieveNo16, sieveNo30,
                 sieveNo50,sieveNo100,sieveNo200, Jobs.KossProjNum, aggregate.aggLocalName,

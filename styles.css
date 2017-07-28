@@ -28,6 +28,9 @@ td, th {
     background-color: #dddddd;
 }*/
 
+.findme {
+  margin-bottom: 100px;
+}
 .bottom-margin {
     margin-top: 3vh;
     margin-bottom: 40px;
@@ -192,4 +195,8 @@ td, th {
   stroke: black;
   stroke-width: 10px;
   stroke-linecap: square;
+}
+/* Sidebar Syles */
+.sidebar {
+  background-color: "gray";
 }
