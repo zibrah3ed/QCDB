@@ -39,7 +39,7 @@
   <div class="container-fluid ">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="page-header ">
+			<div class="jumbotron">
 				<h1 class='lobster-text findme'>
 					Plastic Test Dashboard
 				</h1>

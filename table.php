@@ -37,10 +37,23 @@
       </div>
     </div>
   </nav>
+  <div class="container-fluid">
   <!-- Banner at top of page -->
-  <div class="jumbotron">
-    <div class="container lobster-text">
-      <h1>Aggregate Gradation Search</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1 class='lobster-text findme'>
+          Quality Database
+        </h1>
+      </div>
+      <ul class="breadcrumb">
+        <li>
+          <a href="index.html">Home</a><span class="divider"></span>
+        </li>
+        <li class="active">
+          Aggregate Gradation Search
+        </li>
+      </ul>
     </div>
   </div>
 <!-- End Banner -->
