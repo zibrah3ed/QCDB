@@ -71,7 +71,6 @@
 <!-- End PHP -->
 
 <!-- Gradation Tables -->
-  <div class="container">
       <div class="row">
         <div class="col-md-3">
           <?php
@@ -98,56 +97,88 @@
           ?>
         </div>
       </div>
-    </div>
-<!-- End Gradation Tables -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="result-table z-depth-5">
+            <div class="table-responsive">
+              <table class='table-test table table-striped'>
+              <tr>
+                <th class="col"><strong>Date</strong></th>
+                <th class="col">Time</th>
+                <th class="col">Station</th>
+                <th class="col">Offset</th>
+                <th class="col">Air %</th>
+                <th class="col">Slump</th>
+                <th class="col">Air Temp</th>
+                <th class="col">Conc Temp</th>
+                <th class="col">Unit Weight</th>
+                <th class="col">Inspector</th>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div class="container bottom-margin z-depth-2">
-  <div class="chart-title">
-    <h1 class="chart-title">Individual Aggregates</h1>
-    <!-- Start Chart Labels -->
-    <div id="labels"> Coarse:
-      <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0"
-          width="14" height="14"
-          rx="2" ry="2"
-          class="label-series-coarse"
-          />
-      </svg>
+<!-- End Gradation Tables -->
+<div class="row">
+  <div class="col-md-12">
+      <!-- Add Line lable to chart using vector graphics -->
+      <div class="chart-title">
+        <h1 class="chart-title">Individual Aggregates</h1>
+        <!-- Start Chart Labels -->
+        <div id="labels"> Coarse:
+          <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0"
+            width="14" height="14"
+            rx="2" ry="2"
+            class="label-series-coarse"
+            />
+          </svg>
       &nbsp;&nbsp;Fine:
-      <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0"
-          width="14" height="14"
-          rx="2" ry="2"
-          class="label-series-fine"
-        />
-      </svg>
-    &nbsp;&nbsp;Intermediate One:
-      <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0"
-          width="14" height="14"
-          rx="2" ry="2"
-          class="label-series-int1"
-        />
-      </svg>
-    &nbsp;&nbsp;Intermediate Two:
-      <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0"
-          width="14" height="14"
-          rx="2" ry="2"
-          class="label-series-int2"
-        />
-      </svg>
+          <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0"
+            width="14" height="14"
+            rx="2" ry="2"
+            class="label-series-fine"
+            />
+          </svg>
+      &nbsp;&nbsp;Intermediate One:
+          <svg width="10" height="10" viewBox="0 0 10 10"  xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0"
+            width="14" height="14"
+            rx="2" ry="2"
+            class="label-series-int1"
+            />
+          </svg>
+      &nbsp;&nbsp;Intermediate Two:
+          <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0"
+              width="14" height="14"
+              rx="2" ry="2"
+              class="label-series-int2"
+            />
+          </svg>
+        </div>
+      </div>
+      <!-- End Labels -->
+  <div class="ct-chart ct-golden-section" id="chart1">
+
   </div>
-</div>
-  <!-- End Labels -->
-  <div class="ct-chart ct-golden-section" id="chart1"></div>
-</div>
-<div class="container bottom-margin z-depth-2">
-  <div class="chart-title">
-    <h1 class="chart-title">JMF</h1>
   </div>
-  <div class="ct-chart ct-golden-section" id="chart2"></div>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="chart-title">
+        <h1 class="chart-title">JMF</h1>
+      </div>
+    <div class="ct-chart ct-golden-section" id="chart2">
+
+    </div>
+    </div>
+  </div>
 </div>
 <!-- Graph Creation Script -->
 <script>
