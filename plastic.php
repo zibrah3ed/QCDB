@@ -59,27 +59,59 @@
 	</div>
   <div class="row">
     <div class="col-md-12">
-      <h4>Job Number</h4>
-      <div class="result-table z-depth-2">
-        <div class="table-responsive">
-          <table class='table-test table table-striped'>
-          <tr>
-            <th class="col"><strong>Date</strong></th>
-            <th class="col">Time</th>
-            <th class="col">Station</th>
-            <th class="col">Offset</th>
-            <th class="col">Air %</th>
-            <th class="col">Slump</th>
-            <th class="col">Air Temp</th>
-            <th class="col">Conc Temp</th>
-            <th class="col">Unit Weight</th>
-            <th class="col">Inspector</th>
-        </tr>
-        <tr>
-          <td></td>
-        </tr>
-        </div>
-      </div>
+      <?php
+        include 'config.php';
+        include 'opendb.php';
+        $jobNum = $_GET["jobNum"];
+        $listLimit = 10;
+
+        $sql = "SELECT * , jobs.KossProjNum
+        FROM plastictests
+        INNER JOIN jobs ON Jobs_job_id = jobs.job_id
+        WHERE Jobs.kossProjNum = '$jobNum'
+        ORDER BY plastictests.date DESC LIMIT $listLimit";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+          echo "<div class='result-table z-depth-2'>
+                  <div class='table-responsive'>
+                    <table class='table-test table table-striped'>
+                      <tr>
+                        <th colspan='10' style='text-align: center'>Koss Project: ".$jobNum."</th>
+                      </tr>
+                      <tr>
+                        <th class='col'><strong>Date</strong></th>
+                        <th class='col'>Time</th>
+                        <th class='col'>Station</th>
+                        <th class='col'>Offset</th>
+                        <th class='col'>Air %</th>
+                        <th class='col'>Slump</th>
+                        <th class='col'>Air Temp</th>
+                        <th class='col'>Conc Temp</th>
+                        <th class='col'>Unit Weight</th>
+                        <th class='col'>Inspector</th>
+                      </tr>";
+          while($rowitem = mysqli_fetch_array($result)){
+              echo "<tr>";
+              echo "<td>" . htmlspecialchars($rowitem['date']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['time']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['station']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['offset']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['air']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['slump']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['amb_temp']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['conc_temp']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['unit_weight']) . "</td>";
+              echo "<td>" . htmlspecialchars($rowitem['inspector']) . "</td>";
+              echo "</tr>";
+          }
+          echo "</table></div></div>";
+        } else {
+          echo "<p>0 Results</p>";
+        }
+        $conn->close();
+      ?>
     </div>
   </div>
 </div>
@@ -111,58 +143,9 @@
         ga('create', 'UA-103616182-1', 'auto');
         ga('send', 'pageview');
     </script>
+
     <?php
-    // Job
-    // Date
-    // Air Content
-    // Air Temperature
-    // Technician
-    include 'config.php';
-    include 'opendb.php';
 
-    $sql = "SELECT * FROM plastictests WHERE 'id' IS NOT NULL";
-      // The following if statements create the dynamic functionailty of the SQL
-      // query above. "IS NOT NULL" will stop the query and the if statements will
-      // not be evaluated. If it passes the query will have the following appended
-      // Selector for job number
-      if ($_POST['job']) {
-        $sql .= " AND 'job' = :job";
-      }
-      if ($_POST['date']) {
-        $sql .= " AND 'date' = :date";
-      }
-      if ($_POST['airContent']) {
-        $sql .= " AND 'airContent' = :airContent";
-      }
-      if ($_POST['airTemperature']) {
-        $sql .= " AND 'airTemperature' = :airTemperature";
-      }
-      if ($_POST['technician']) {
-        $sql .= " AND 'technician' = :technician";
-      }
-      if ($_POST['concTemperature']) {
-        $sql .= " AND 'concTemperature' = :concTemperature";
-      }
-
-      $stmt = $dbh->prepare($sql);
-
-      if ($_POST['job']){
-        $stmt->bindValue(':job', $_POST['job']);
-      }
-      if ($_POST['date']){
-        $stmt->bindValue(':date', $_POST['date']);
-      }
-      if ($_POST['airContent']){
-        $stmt->bindValue(':airContent', $_POST['airContent']);
-      }
-      if ($_POST['airTemperature']){
-        $stmt->bindValue(':airTemperature', $_POST['airTemperature']);
-      }
-      if ($_POST['technician']){
-        $stmt->bindValue(':technician', $_POST['technician']);
-      }
-      if ($_POST['concTemperature']){
-        $stmt->bindValue(':concTemperature', $_POST['concTemperature']);
-      }
-
-      $stmt->execute();
+?>
+</body>
+</html>
