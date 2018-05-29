@@ -2,7 +2,7 @@
 
 Quality Control Database 
 
-Webpage front end for database conatining hostorical data for the following:
+Webpage front end for database conatining historical data for the following:
 Current:
   Gradations
 Planned :
