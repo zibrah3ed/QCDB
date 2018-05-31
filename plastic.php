@@ -65,11 +65,12 @@
         $jobNum = $_GET["jobNum"];
         $listLimit = 10;
 
-        $sql = "SELECT * , jobs.KossProjNum
-        FROM plastictests
-        INNER JOIN jobs ON Jobs_job_id = jobs.job_id
-        WHERE Jobs.kossProjNum = '$jobNum'
-        ORDER BY plastictests.date DESC LIMIT $listLimit";
+# Select the last 10 results of the matching project.
+        $sql =  "SELECT * , Jobs.KossProjNum
+                FROM plasticTests
+                INNER JOIN Jobs ON Jobs_job_id = Jobs.job_id
+                WHERE Jobs.kossProjNum = '$jobNum'
+                ORDER BY plasticTests.date DESC LIMIT $listLimit";
 
         $result = $conn->query($sql);
 
