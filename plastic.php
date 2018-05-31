@@ -63,7 +63,7 @@
         include 'config.php';
         include 'opendb.php';
         $jobNum = $_GET["jobNum"];
-        $listLimit = 10;
+        $listLimit = 20;
 
 # Select the last 10 results of the matching project.
         $sql =  "SELECT * , Jobs.KossProjNum
@@ -79,7 +79,7 @@
                   <div class='table-responsive'>
                     <table class='table-test table table-striped'>
                       <tr>
-                        <th colspan='10' style='text-align: center'>Koss Project: ".$jobNum."</th>
+                        <th colspan='10' style='text-align: left'>Koss Project: ".$jobNum."</th>
                       </tr>
                       <tr>
                         <th class='col'><strong>Date</strong></th>
