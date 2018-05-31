@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";//localh.dev @ Home
 $username = "tef";
-$password = "k0ss!@#$%";
+$password = "drillgroversteak";
 $dbName = "QCDB";
 ?>
